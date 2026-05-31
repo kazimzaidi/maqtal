@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Naskh+Arabic&family=Georgia&display=swap');
+
+/* Base layout */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fdfcf9;
+  color: #222;
+  padding: 2em;
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  font-family: 'Amiri', serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2em;
+  border-bottom: 2px solid #999;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #555;
+  margin-top: 0;
+}
+
+/* Arabic Qur’anic or hadith lines */
+
+/* Translation block */
+div.tr {
+  font-family: 'Georgia', serif;
+  color: #444;
+  margin: 1.2em 0;
+  padding: 0.75em 1em;
+  border-left: 4px solid #ccc;
+  background-color: #fefefe;
+  border-radius: 5px;
+}
+
+/* Title or centerpieces */
+.bc, .cc {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.5em 0 0.5em;
+  color: #222;
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.cc {
+  font-size: 1.35em;
+}
+
+.bc {
+  font-size: 1.05em;
+}
+
+/* Page numbers */
+div.s {
+  text-align: center;
+  font-size: 1.1em;
+  color: #888;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+}
+
+/* Footnotes or references */
+span.p {
+  display: block;
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 1em;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Tables — often for poetry */
+table {
+  margin: 2em auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+  font-size: 1.3em;
+  line-height: 2.2;
+  padding: 0.5em;
+  vertical-align: top;
+  text-align: justify;
+  direction: rtl;
+}
+
+/* Superscripts (footnote numbers) */
+sup {
+  font-size: 0.75em;
+  vertical-align: super;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+sup:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Horizontal rule between sections */
+hr, .hrp {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2em 0;
+}
+
+/* Footer note */
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid #ddd;
+}
+
+/* Optional: bilingual block layout (not applied by default) */
+/* Responsive bilingual layout: side-by-side on large screens, stacked on small */
+.bilingual {
+  display: flex;
+  gap: 2em;
+  justify-content: space-between;
+  margin: 2em 0;
+  flex-wrap: wrap;
+}
+
+.bilingual.couplets {
+  color: #4B0082;
+}
+
+.bilingual .arabic,
+.bilingual .translation {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+
+/* Arabic styling */
+.bilingual .arabic {
+  direction: rtl;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 1.35em;
+  line-height: 2.2;
+  text-align: right;
+}
+
+/* English styling */
+.bilingual .translation {
+  font-family: 'Georgia', serif;
+  font-size: 1.1em;
+  line-height: 1.9;
+  text-align: left;
+}
+
+/* On small screens: stack the columns */
+@media (max-width: 768px) {
+  .bilingual {
+    flex-direction: column;
+  }
+
+  .bilingual .arabic,
+  .bilingual .translation {
+    flex: 1 1 100%;
+  }
+}
