@@ -33,7 +33,7 @@ MAX_RETRIES = 3
 RETRY_DELAY = 5
 
 MODEL = "claude-opus-4-8"
-CHUNK_SIZE = 20   # blocks per API call — large pages overflow max_tokens if sent in one shot
+CHUNK_SIZE = 10   # blocks per API call — keep output well under max_tokens
 
 client = anthropic.Anthropic()
 
@@ -83,7 +83,7 @@ def translate_chunk(page_num, chunk_blocks, context_tail):
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=8000,
+                max_tokens=16000,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user_msg}],
             )

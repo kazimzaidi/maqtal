@@ -32,7 +32,7 @@
       direction: rtl;
       text-align: right;
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 1.2em;
+      font-size: 1.15em;
       width: 45%;
     }
     .toc-table .pg {
@@ -50,6 +50,42 @@
       color: #7a1b2b;
       text-decoration: underline;
     }
+
+    /* Section headings (Part One / Part Two / Conclusion) */
+    .section-heading {
+      background-color: #f0ece0;
+    }
+    .section-heading td {
+      font-weight: bold;
+      font-size: 1.05em;
+      padding: 0.7em 0.6em;
+      border-bottom: 2px solid #ccc;
+    }
+    .section-heading .ar { font-size: 1.2em; }
+    .section-heading .ur { color: #333; }
+
+    /* Day / night headings */
+    .day-heading {
+      background-color: #faf8f0;
+    }
+    .day-heading td {
+      font-weight: bold;
+      color: #555;
+      padding: 0.6em 0.6em 0.3em;
+      border-bottom: none;
+      direction: rtl;
+      text-align: right;
+      font-family: 'Noto Naskh Arabic', 'Noto Nastaliq Urdu', serif;
+    }
+
+    /* Sub-entries (topic descriptions) */
+    .sub-entry .ar { padding-right: 1.5em; }
+    .sub-entry .ur { padding-right: 1.5em; color: #555; font-size: 1.05em; }
+
+    /* Unavailable pages — grayed, no link */
+    .unavail { opacity: 0.38; }
+    .unavail td { cursor: default; }
+
     .col-headers th {
       font-size: 0.85em;
       color: #888;
@@ -58,29 +94,33 @@
       font-weight: normal;
       text-align: center;
     }
-    .col-headers th.ar, .col-headers th.ur { text-align: right; direction: rtl; }
+    .col-headers th.ar { text-align: right; direction: rtl; }
+    .col-headers th.ur { text-align: right; direction: rtl;
+                         font-family: 'Noto Nastaliq Urdu', serif; }
+
     .notice {
       direction: rtl;
       text-align: center;
       font-family: 'Noto Nastaliq Urdu', serif;
-      font-size: 1.15em;
+      font-size: 1.1em;
       color: #555;
       background: #f8f4e8;
       border: 1px solid #e6ddc0;
       border-radius: 6px;
-      padding: 1em 1.4em;
-      margin: 2em 0;
-      line-height: 2.1;
+      padding: 0.9em 1.4em;
+      margin: 1.5em 0 2em;
+      line-height: 2.2;
     }
+    .notice strong { color: #7a1b2b; }
+
     .edition-links {
       text-align: center;
       margin-top: 2.5em;
       font-family: 'Noto Nastaliq Urdu', serif;
       direction: rtl;
+      font-size: 1em;
     }
-    .edition-links a {
-      color: #555;
-    }
+    .edition-links a { color: #555; }
   </style>
 </head>
 <body>
@@ -89,11 +129,16 @@
   <p style="text-align:center; color:#666; font-size:0.95em; margin-bottom:0.3em;">
     تأليف الشيخ عبدالله ابن الحاج حسن آل درويش
   </p>
-  <p style="text-align:center; color:#666; font-size:0.95em; margin-top:0; margin-bottom:2em; direction:rtl; font-family:'Noto Nastaliq Urdu', serif;">
+  <p style="text-align:center; color:#666; font-size:0.95em; margin-top:0; margin-bottom:2em;
+     direction:rtl; font-family:'Noto Nastaliq Urdu', serif;">
     تصنیف: شیخ عبداللہ بن الحاج حسن الدرویش
   </p>
 
-  <p class="notice">یہ اردو ایڈیشن ابھی زیرِ تکمیل ہے۔ باقی صفحات کا ترجمہ جاری ہے، اس دوران ذیل میں ایک نمونہ صفحہ دستیاب ہے۔</p>
+  <p class="notice">
+    یہ اردو ایڈیشن زیرِ تکمیل ہے۔ ابھی <strong>صفحات ۱–۵ اور ۲۶</strong> دستیاب ہیں؛
+    باقی صفحات کا ترجمہ جاری ہے۔
+    دستیاب صفحات پر کلک کریں — غیر دستیاب عنوانات مدھم دکھائے گئے ہیں۔
+  </p>
 
   <table class="toc-table">
     <tr class="col-headers">
@@ -101,19 +146,441 @@
       <th class="ur">اردو عنوان</th>
       <th class="pg">ص</th>
     </tr>
+
+    <!-- Front matter — pages 01 available -->
     <tr>
-      <td class="ar"><a href="26.html">مقتل بني هاشم (عليهم السلام)</a></td>
-      <td class="ur"><a href="26.html">بنی ہاشم (علیہم السلام) کی شہادت — ابھی دستیاب</a></td>
-      <td class="pg">376</td>
+      <td class="ar"><a href="01.html">تقديم</a></td>
+      <td class="ur"><a href="01.html">تقدیم</a></td>
+      <td class="pg">5</td>
     </tr>
+    <tr>
+      <td class="ar"><a href="01.html">مقدّمة الكتاب</a></td>
+      <td class="ur"><a href="01.html">مقدمۂ کتاب</a></td>
+      <td class="pg">7</td>
+    </tr>
+
+    <!-- PART ONE -->
+    <tr class="section-heading">
+      <td class="ar">القسم الأول</td>
+      <td class="ur">پہلا حصہ</td>
+      <td class="pg"></td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="01.html">المجالس الخاصة لعشرة محرم</a></td>
+      <td class="ur"><a href="01.html">محرمِ الحرام کے دس دنوں کی خصوصی مجالس</a></td>
+      <td class="pg">11</td>
+    </tr>
+
+    <!-- Day 1 — page 01 -->
+    <tr class="day-heading">
+      <td colspan="3">اليوم الأول — پہلا دن</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="01.html">المجلس الأول</a></td>
+      <td class="ur"><a href="01.html">پہلی مجلس</a></td>
+      <td class="pg">11</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="01.html">إخبار النبي ﷺ بما يجري على أهل بيته من القتل والتشريد</a></td>
+      <td class="ur"><a href="01.html">نبی ﷺ کا اپنے اہلِ بیت پر قتل و جلاوطنی کی خبر دینا</a></td>
+      <td class="pg">11</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="02.html">المجلس الثاني</a></td>
+      <td class="ur"><a href="02.html">دوسری مجلس</a></td>
+      <td class="pg">22</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="02.html">وقوف فاطمة ع في المحشر ومعها قميص الحسين ع</a></td>
+      <td class="ur"><a href="02.html">حضرت فاطمہ (علیہا السلام) کا میدانِ حشر میں حسین (علیہ السلام) کی قمیص کے ساتھ کھڑا ہونا</a></td>
+      <td class="pg">22</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="02.html">المجلس الثالث</a></td>
+      <td class="ur"><a href="02.html">تیسری مجلس</a></td>
+      <td class="pg">28</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="02.html">بكاء النبي ﷺ وحزنه على الإمام الحسين ع</a></td>
+      <td class="ur"><a href="02.html">نبی ﷺ کا امام حسین (علیہ السلام) پر گریہ و حزن</a></td>
+      <td class="pg">28</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="03.html">المجلس الرابع</a></td>
+      <td class="ur"><a href="03.html">چوتھی مجلس</a></td>
+      <td class="pg">33</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="03.html">بكاء الإمام زين العابدين ع وحزنه على أبيه الإمام الحسين ع</a></td>
+      <td class="ur"><a href="03.html">امام زین العابدین (علیہ السلام) کا اپنے پدرِ بزرگوار امام حسین (علیہ السلام) پر گریہ و حزن</a></td>
+      <td class="pg">33</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="03.html">المجلس الخامس</a></td>
+      <td class="ur"><a href="03.html">پانچویں مجلس</a></td>
+      <td class="pg">41</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="03.html">دخول دعبل الخزاعي على الإمام علي بن موسى الرضا ع في أيام عاشوراء</a></td>
+      <td class="ur"><a href="03.html">ایامِ عاشورا میں دعبل خزاعی کا امام علی بن موسیٰ الرضا (علیہ السلام) کی خدمت میں حاضر ہونا</a></td>
+      <td class="pg">41</td>
+    </tr>
+
+    <!-- Day 2 — page 04-05 -->
+    <tr class="day-heading">
+      <td colspan="3">اليوم الثاني — دوسرا دن</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="04.html">المجلس الأول</a></td>
+      <td class="ur"><a href="04.html">پہلی مجلس</a></td>
+      <td class="pg">46</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="04.html">الإمام الحسين ع في مجلس الوليد</a></td>
+      <td class="ur"><a href="04.html">امام حسین (علیہ السلام) کی ولید کی مجلس میں حاضری</a></td>
+      <td class="pg">46</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="04.html">المجلس الثاني</a></td>
+      <td class="ur"><a href="04.html">دوسری مجلس</a></td>
+      <td class="pg">56</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="04.html">خروج الإمام الحسين ع من المدينة</a></td>
+      <td class="ur"><a href="04.html">امام حسین (علیہ السلام) کا مدینہ سے خروج</a></td>
+      <td class="pg">56</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="05.html">المجلس الثالث</a></td>
+      <td class="ur"><a href="05.html">تیسری مجلس</a></td>
+      <td class="pg">67</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="05.html">بكاء فاطمة ع وحزنها على الحسين ع</a></td>
+      <td class="ur"><a href="05.html">حضرت فاطمہ (علیہا السلام) کا حسین (علیہ السلام) پر گریہ و حزن</a></td>
+      <td class="pg">67</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="05.html">المجلس الرابع</a></td>
+      <td class="ur"><a href="05.html">چوتھی مجلس</a></td>
+      <td class="pg">72</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="05.html">بكاء الأئمة ع وحزنهم على الإمام الحسين ع</a></td>
+      <td class="ur"><a href="05.html">آئمہ (علیہم السلام) کا امام حسین (علیہ السلام) پر گریہ و حزن</a></td>
+      <td class="pg">72</td>
+    </tr>
+
+    <!-- Day 2 continued — page 06 (unavailable) -->
+    <tr class="unavail">
+      <td class="ar">المجلس الخامس</td>
+      <td class="ur"></td>
+      <td class="pg">78</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">دخول الشعراء على الأئمة ع وبكاؤهم على الإمام الحسين ع وتشييدهم المأتم</td>
+      <td class="ur"></td>
+      <td class="pg">78</td>
+    </tr>
+
+    <!-- Day 3 — pages 06-08 (unavailable) -->
+    <tr class="day-heading unavail">
+      <td colspan="3">اليوم الثالث — تیسرا دن</td>
+    </tr>
+    <tr class="unavail">
+      <td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">83</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">خروج الإمام الحسين ع من مكة المكرمة</td><td class="ur"></td><td class="pg">83</td>
+    </tr>
+    <tr class="unavail">
+      <td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">91</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">رعاية النبي ﷺ للإمام الحسين ع ومحبته له</td><td class="ur"></td><td class="pg">91</td>
+    </tr>
+    <tr class="unavail">
+      <td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">96</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">إخبار النبي ﷺ فاطمةَ ع بمقتل الحسين ع</td><td class="ur"></td><td class="pg">96</td>
+    </tr>
+    <tr class="unavail">
+      <td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">100</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">نياحة مولاتنا فاطمة الزهراء ع على الإمام الحسين ع</td><td class="ur"></td><td class="pg">100</td>
+    </tr>
+    <tr class="unavail">
+      <td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">106</td>
+    </tr>
+    <tr class="sub-entry unavail">
+      <td class="ar">عبادة الحسين ع وحجه وبعض كراماته الشريفة</td><td class="ur"></td><td class="pg">106</td>
+    </tr>
+
+    <!-- Day 4 — pages 08-10 (unavailable) -->
+    <tr class="day-heading unavail">
+      <td colspan="3">اليوم الرابع — چوتھا دن</td>
+    </tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">112</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">كتب أهل الكوفة إلى الإمام الحسين ع وندبه مسلم بن عقيل ع إليهم</td><td class="ur"></td><td class="pg">112</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">120</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">دخول ابن زياد الكوفة ومقتل هانئ بن عروة</td><td class="ur"></td><td class="pg">120</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">130</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل مسلم بن عقيل ع</td><td class="ur"></td><td class="pg">130</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">144</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">وصول خبر مقتل مسلم للحسين ع وخبر ابنته حميدة</td><td class="ur"></td><td class="pg">144</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">148</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل ولدي مسلم بن عقيل ع</td><td class="ur"></td><td class="pg">148</td></tr>
+
+    <!-- Day 5 — pages 11-13 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم الخامس — پانچواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">154</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مسير الإمام الحسين ع إلى كربلاء</td><td class="ur"></td><td class="pg">154</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">163</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">نزول الإمام الحسين ع كربلاء</td><td class="ur"></td><td class="pg">163</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">175</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مرور أمير المؤمنين ع بكربلاء وبكاؤه على الحسين ع</td><td class="ur"></td><td class="pg">175</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">181</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ما جاء في قبر الإمام الحسين ع وأرض كربلاء</td><td class="ur"></td><td class="pg">181</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">188</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">جود الإمام الحسين ع ومكارم أخلاقه الشريفة وفضل زيارته</td><td class="ur"></td><td class="pg">188</td></tr>
+
+    <!-- Day 6 — pages 13-15 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم السادس — چھٹا دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">194</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">توافد الخيل والرجال إلى كربلاء ودعوة حبيب لبني أسد</td><td class="ur"></td><td class="pg">194</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">202</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">أصحاب الإمام الحسين ع</td><td class="ur"></td><td class="pg">202</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">208</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">حبيب بن مظاهر الأسدي ع ووصوله كربلاء ومقتله الشريف</td><td class="ur"></td><td class="pg">208</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">217</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">كلمات بعض أصحاب الإمام الحسين ع وبعض الصحابة في مقتل الحسين ع وفداحته</td><td class="ur"></td><td class="pg">217</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">225</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">الإمام الحسين ع والأنبياء</td><td class="ur"></td><td class="pg">225</td></tr>
+
+    <!-- Day 7 — pages 16-18 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم السابع — ساتواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">234</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">من مواقف أبي الفضل العباس ع</td><td class="ur"></td><td class="pg">234</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">240</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">منزلة العباس ع عند أهل البيت ع ومصرعه الشريف</td><td class="ur"></td><td class="pg">240</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">248</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقامات العباس ع ومواقفه الشريفة</td><td class="ur"></td><td class="pg">248</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">251</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">واعية بني هاشم وأهل المدينة وبكاؤهم على الإمام الحسين ع وبكاء أم البنين على العباس ع</td><td class="ur"></td><td class="pg">251</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">260</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">شكاية فاطمة ع في المحشر ورؤيتها الحسين ع</td><td class="ur"></td><td class="pg">260</td></tr>
+
+    <!-- Day 8 — pages 18-20 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم الثامن — آٹھواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">266</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">القاسم ع ونصرته للحسين ع ومصرعه</td><td class="ur"></td><td class="pg">266</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">272</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">الشهداء من أبناء الإمام الحسن الزكي ع</td><td class="ur"></td><td class="pg">272</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">276</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">وفاة القاسم ابن الإمام موسى بن جعفر ع</td><td class="ur"></td><td class="pg">276</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">280</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ما جرى على ذرية رسول الله ﷺ من القتل والتشريد والاضطهاد من ولاة الجور</td><td class="ur"></td><td class="pg">280</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">291</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">زواج فاطمة من علي عليهما السلام</td><td class="ur"></td><td class="pg">291</td></tr>
+
+    <!-- Day 9 — pages 20-22 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم التاسع — نواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">299</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">خصال علي الأكبر ع وصفاته الشريفة</td><td class="ur"></td><td class="pg">299</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">304</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل علي الأكبر ع</td><td class="ur"></td><td class="pg">304</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">309</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">فضل البكاء على الإمام الحسين ع ومصائب أهل البيت ع</td><td class="ur"></td><td class="pg">309</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">317</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إخبار جبرئيل والملائكة النبيَّ ﷺ بمقتل الحسين ع</td><td class="ur"></td><td class="pg">317</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">323</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في خصال الإمام الحسين ع الشريفة ومحاورته مع عمر بن سعد</td><td class="ur"></td><td class="pg">323</td></tr>
+
+    <!-- Night of Ashura — pages 23-24 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">ليلة عاشوراء — شبِ عاشورا</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">331</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">خطبة الإمام الحسين ع في أصحابه ليلة عاشوراء</td><td class="ur"></td><td class="pg">331</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">335</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">حديث الإمام زين العابدين ع ووصية الإمام الحسين ع لأخته زينب ع</td><td class="ur"></td><td class="pg">335</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">339</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">من مواقف الأنصار ليلة عاشوراء</td><td class="ur"></td><td class="pg">339</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">346</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مصيبة النبي ﷺ في الحسين ع</td><td class="ur"></td><td class="pg">346</td></tr>
+
+    <!-- Day of Ashura — pages 24-25 unavailable, page 26 AVAILABLE -->
+    <tr class="day-heading">
+      <td colspan="3">يوم عاشوراء — یوم عاشورا</td>
+    </tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">350</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">أهل البيت ع ويوم عاشوراء</td><td class="ur"></td><td class="pg">350</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">357</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">خطبة الإمام الحسين ع يوم عاشوراء</td><td class="ur"></td><td class="pg">357</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">365</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل الأنصار ع</td><td class="ur"></td><td class="pg">365</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">373</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل الأنصار ع أيضاً</td><td class="ur"></td><td class="pg">373</td></tr>
+    <!-- Page 26 — AVAILABLE -->
+    <tr>
+      <td class="ar"><a href="26.html">المجلس الخامس</a></td>
+      <td class="ur"><a href="26.html">پانچویں مجلس</a></td>
+      <td class="pg">380</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="26.html">مقتل بني هاشم ع</a></td>
+      <td class="ur"><a href="26.html">بنی ہاشم (علیہم السلام) کی شہادت</a></td>
+      <td class="pg">380</td>
+    </tr>
+    <tr>
+      <td class="ar"><a href="26.html">المجلس السادس</a></td>
+      <td class="ur"><a href="26.html">چھٹی مجلس</a></td>
+      <td class="pg">389</td>
+    </tr>
+    <tr class="sub-entry">
+      <td class="ar"><a href="26.html">مقتل عبدالله الرضيع ع</a></td>
+      <td class="ur"><a href="26.html">عبداللہ رضیع (علیہ السلام) کی شہادت</a></td>
+      <td class="pg">389</td>
+    </tr>
+    <!-- Pages 27-28 unavailable -->
+    <tr class="unavail"><td class="ar">المجلس السابع</td><td class="ur"></td><td class="pg">391</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">وصايا الإمام الحسين ع لولده الإمام زين العابدين ع ووداعه للنساء</td><td class="ur"></td><td class="pg">391</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثامن</td><td class="ur"></td><td class="pg">397</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل الإمام الحسين ع</td><td class="ur"></td><td class="pg">397</td></tr>
+    <tr class="unavail"><td class="ar">المجلس التاسع</td><td class="ur"></td><td class="pg">412</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">نهي أهل البيت ع عن الصيام في يوم عاشوراء وإظهار بني أمية فيه الفرح والسرور</td><td class="ur"></td><td class="pg">412</td></tr>
+
+    <!-- Night of 11th — pages 28-29 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">ليلة الحادي عشر — گیارھویں کی رات</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">419</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مصيبة النبي ﷺ وحزنه بمقتل الحسين ع</td><td class="ur"></td><td class="pg">419</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">423</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">أحداث ووقائع ما بعد مقتل الحسين ع: سلبه ورض جسده الطاهر وحرق الخيام</td><td class="ur"></td><td class="pg">423</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">429</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">جواد الإمام الحسين ع وسلب النساء ودخول القوم على الإمام زين العابدين ع</td><td class="ur"></td><td class="pg">429</td></tr>
+
+    <!-- Day 11 — pages 29-30 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم الحادي عشر — گیارھواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">434</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">خروج السبايا من كربلاء ومرورهم على القتلى</td><td class="ur"></td><td class="pg">434</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">437</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في من رأى رسول الله ﷺ بعد مقتل الإمام الحسين ع</td><td class="ur"></td><td class="pg">437</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">444</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">الآيات التي ظهرت بعد مقتل الإمام الحسين ع</td><td class="ur"></td><td class="pg">444</td></tr>
+
+    <!-- Day 12 — page 30-31 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم الثاني عشر — بارھواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">450</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">وصولهم الكوفة وما جرى عليهم فيها</td><td class="ur"></td><td class="pg">450</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">459</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في خصال زينب ع وصبرها وجهادها</td><td class="ur"></td><td class="pg">459</td></tr>
+
+    <!-- Day 13 — pages 31-33 (unavailable) -->
+    <tr class="day-heading unavail"><td colspan="3">اليوم الثالث عشر — تیرھواں دن</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">463</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">الإمام لا يلي أمره إلا الإمام ودفن الأجساد الطاهرة ع</td><td class="ur"></td><td class="pg">463</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">469</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">حديث الحوراء زينب ع للإمام زين العابدين ع وكلامها في علو شأن قبر الحسين ع على مر الأيام</td><td class="ur"></td><td class="pg">469</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">474</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">بكاء الطير والوحش على الإمام الحسين ع</td><td class="ur"></td><td class="pg">474</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">479</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">حضور النبي ﷺ دفن خديجة وفاطمة بنت أسد ع وحضور الأئمة ع جنائز شيعتهم</td><td class="ur"></td><td class="pg">479</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">486</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">خصائص الدفن عن أمير المؤمنين ع</td><td class="ur"></td><td class="pg">486</td></tr>
+
+    <!-- PART TWO -->
+    <tr class="section-heading unavail">
+      <td class="ar">القسم الثاني</td>
+      <td class="ur">دوسرا حصہ</td>
+      <td class="pg"></td>
+    </tr>
+    <tr class="unavail"><td class="ar">المجالس العامة لعشرة محرم</td><td class="ur">محرمِ الحرام کے دس دنوں کی عمومی مجالس</td><td class="pg">491</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الأوّل</td><td class="ur"></td><td class="pg">491</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إخبار النبي ﷺ فاطمةَ ع بشهادة الحسن ع بالسم والحسين ع بالقتل وعزاؤه لها</td><td class="ur"></td><td class="pg">491</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">495</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إحياء أمر أهل البيت ع وإقامة العزاء عليهم والبكاء على الحسين ع</td><td class="ur"></td><td class="pg">495</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">505</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في أن مصيبة الحسين ع أعظم المصائب</td><td class="ur"></td><td class="pg">505</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">512</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إنكار أهل الأديان على قتلة الإمام الحسين ع</td><td class="ur"></td><td class="pg">512</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس</td><td class="ur"></td><td class="pg">517</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">بكاء أمير المؤمنين ع وحزنه على الإمام الحسين ع</td><td class="ur"></td><td class="pg">517</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السادس</td><td class="ur"></td><td class="pg">521</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">فضل إنشاد الشعر في الإمام الحسين ع ودخول بعض الشعراء على الأئمة ع</td><td class="ur"></td><td class="pg">521</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السابع</td><td class="ur"></td><td class="pg">524</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إخبار النبي ﷺ أم سلمة بمقتل الحسين ع وإعطائها تربة من كربلاء</td><td class="ur"></td><td class="pg">524</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثامن</td><td class="ur"></td><td class="pg">530</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">احتفاء الملائكة بالحسين ع وتوسل فطرس به</td><td class="ur"></td><td class="pg">530</td></tr>
+    <tr class="unavail"><td class="ar">المجلس التاسع</td><td class="ur"></td><td class="pg">536</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إخبار النبي ﷺ بمقتل الحسين ع</td><td class="ur"></td><td class="pg">536</td></tr>
+    <tr class="unavail"><td class="ar">المجلس العاشر</td><td class="ur"></td><td class="pg">541</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">إخبار أمير المؤمنين ع بمقتل الحسين ع وإخبار المحدِّثين بذلك</td><td class="ur"></td><td class="pg">541</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الحادي عشر</td><td class="ur"></td><td class="pg">548</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">من كرامات الإمام الحسين ع</td><td class="ur"></td><td class="pg">548</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني عشر</td><td class="ur"></td><td class="pg">551</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">فضل التربة الحسينية</td><td class="ur"></td><td class="pg">551</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث عشر</td><td class="ur"></td><td class="pg">557</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">الإمام الحسين ع ويحيى بن زكريا ع</td><td class="ur"></td><td class="pg">557</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع عشر</td><td class="ur"></td><td class="pg">560</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">انتقام الله من قتلة الإمام الحسين ع وأتباعهم على يد الإمام الحجة عجّل الله فرجه</td><td class="ur"></td><td class="pg">560</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس عشر</td><td class="ur"></td><td class="pg">566</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في انتقام الله تعالى من قتلة الإمام الحسين ع</td><td class="ur"></td><td class="pg">566</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السادس عشر</td><td class="ur"></td><td class="pg">575</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ظلامات أهل البيت ع واضطهادهم وما جرى عليهم من القتل والتشريد</td><td class="ur"></td><td class="pg">575</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السابع عشر</td><td class="ur"></td><td class="pg">582</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ظلامات أهل البيت ع وشيعتهم</td><td class="ur"></td><td class="pg">582</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثامن عشر</td><td class="ur"></td><td class="pg">587</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ما مني به آل البيت ع وشيعتهم من الأذى والاضطهاد</td><td class="ur"></td><td class="pg">587</td></tr>
+    <tr class="unavail"><td class="ar">المجلس التاسع عشر</td><td class="ur"></td><td class="pg">593</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">بعض من قتل في محبة أهل البيت ع</td><td class="ur"></td><td class="pg">593</td></tr>
+    <tr class="unavail"><td class="ar">المجلس العشرون</td><td class="ur"></td><td class="pg">600</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">بعض من قتل في محبة أهل البيت ع أيضاً وما لقيه الشيعة من ظلم ولاة الجور</td><td class="ur"></td><td class="pg">600</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الحادي والعشرون</td><td class="ur"></td><td class="pg">609</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل جعفر بن أبي طالب عليهما السلام</td><td class="ur"></td><td class="pg">609</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني والعشرون</td><td class="ur"></td><td class="pg">613</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل الحمزة بن عبدالمطلب ع</td><td class="ur"></td><td class="pg">613</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث والعشرون</td><td class="ur"></td><td class="pg">619</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">فيما جرى على العلويين في أيام المنصور والرشيد والمتوكل من القتل والاضطهاد</td><td class="ur"></td><td class="pg">619</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع والعشرون</td><td class="ur"></td><td class="pg">628</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">زواج خديجة ع من رسول الله ﷺ ونبذة من فضلها وحياتها الشريفة</td><td class="ur"></td><td class="pg">628</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الخامس والعشرون</td><td class="ur"></td><td class="pg">635</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">النجاة بأهل البيت ع</td><td class="ur"></td><td class="pg">635</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السادس والعشرون</td><td class="ur"></td><td class="pg">637</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في محبة أهل البيت ع</td><td class="ur"></td><td class="pg">637</td></tr>
+    <tr class="unavail"><td class="ar">المجلس السابع والعشرون</td><td class="ur"></td><td class="pg">647</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في ولاية أهل البيت ع</td><td class="ur"></td><td class="pg">647</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثامن والعشرون</td><td class="ur"></td><td class="pg">648</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">ما ورد في ذم بغض أهل البيت ع</td><td class="ur"></td><td class="pg">648</td></tr>
+    <tr class="unavail"><td class="ar">المجلس التاسع والعشرون</td><td class="ur"></td><td class="pg">653</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">عداوة بني أمية للإسلام ولعترة رسول الله ﷺ</td><td class="ur"></td><td class="pg">653</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثلاثون</td><td class="ur"></td><td class="pg">657</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">من تأريخ يزيد بن معاوية وأحقاده البدرية</td><td class="ur"></td><td class="pg">657</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الحادي والثلاثون</td><td class="ur"></td><td class="pg">664</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مقتل الإمام الحسين ع وفداحته في كلمات الصحابة وغيرهم</td><td class="ur"></td><td class="pg">664</td></tr>
+
+    <!-- CONCLUSION -->
+    <tr class="section-heading unavail">
+      <td class="ar">الخاتمة: في يوم الأربعين</td>
+      <td class="ur">خاتمہ: یوم اربعین</td>
+      <td class="pg">673</td>
+    </tr>
+    <tr class="unavail"><td class="ar">المجلس الأول</td><td class="ur"></td><td class="pg">673</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">رجوع الإمام زين العابدين ع مع عماته وأخواته إلى كربلاء</td><td class="ur"></td><td class="pg">673</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثاني</td><td class="ur"></td><td class="pg">678</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">في فضل زيارة الإمام الحسين ع</td><td class="ur"></td><td class="pg">678</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الثالث</td><td class="ur"></td><td class="pg">684</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">مما عوّض الله تعالى به الإمام الحسين ع</td><td class="ur"></td><td class="pg">684</td></tr>
+    <tr class="unavail"><td class="ar">المجلس الرابع</td><td class="ur"></td><td class="pg">686</td></tr>
+    <tr class="sub-entry unavail"><td class="ar">حرث المتوكل قبر الحسين ع وما جرى على القبر من الظلم والعدوان</td><td class="ur"></td><td class="pg">686</td></tr>
+
   </table>
 
   <p class="edition-links">
-    <a href="../index.html">→ عربی-انگریزی ایڈیشن کی طرف واپس جائیں</a>
+    <a href="../index.html">← عربی-انگریزی ایڈیشن کی طرف واپس جائیں</a>
   </p>
 
   <div class="footer">
-    المجالس العاشورية في المآتم الحسينية &mdash; Arabic original with Urdu translation (pilot)
+    المجالس العاشورية في المآتم الحسينية — اردو ترجمہ (زیرِ تکمیل)
   </div>
 </body>
 </html>
