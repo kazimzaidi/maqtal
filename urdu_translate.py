@@ -15,6 +15,7 @@ Usage:
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -25,6 +26,14 @@ import anthropic
 sys.path.insert(0, str(Path(__file__).parent))
 from retranslate import extract_blocks  # reuse Arabic block extraction
 
+_env_path = Path.home() / "humran/server/.env"
+for _line in _env_path.read_text().splitlines():
+    if _line.startswith("ANTHROPIC_API_KEY="):
+        os.environ.setdefault("ANTHROPIC_API_KEY", _line.split("=", 1)[1].strip())
+
+client = anthropic.Anthropic()
+MODEL = "claude-sonnet-4-5"
+
 PAGES_DIR = Path(__file__).parent
 URDU_DIR = PAGES_DIR / "urdu"
 NUM_PAGES = 47
@@ -32,10 +41,7 @@ CONTEXT_TAIL = 4
 MAX_RETRIES = 3
 RETRY_DELAY = 5
 
-MODEL = "claude-opus-4-8"
-CHUNK_SIZE = 10   # blocks per API call — keep output well under max_tokens
-
-client = anthropic.Anthropic()
+CHUNK_SIZE = 10   # blocks per API call
 
 SYSTEM_PROMPT = """You are translating "المجالس العاشورية في المآتم الحسينية" \
 (The Ashura Gatherings in the Husayni Mourning Assemblies) \
@@ -138,7 +144,7 @@ def translate_title():
     subtitle = "The ʿĀshūrāʾ gatherings in the Ḥusaynī mourning assemblies"
     response = client.messages.create(
         model=MODEL,
-        max_tokens=500,
+        max_tokens=256,
         system=TITLE_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": json.dumps([subtitle], ensure_ascii=False)}],
     )
