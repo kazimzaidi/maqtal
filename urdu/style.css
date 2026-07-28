@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Naskh+Arabic&family=Noto+Nastaliq+Urdu&family=Georgia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Naskh+Arabic&family=Noto+Nastaliq+Urdu:wght@400..700&family=Gulzar&display=swap');
 
 /* Base layout */
 body {
-  font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
+  font-family: 'Gulzar', 'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
   background-color: #fdfcf9;
   color: #222;
   padding: 2em;
   max-width: 900px;
   margin: auto;
   font-size: 1.15rem;
-  line-height: 1.9;
+  line-height: 2.2;
 }
 
 /* Headings */
@@ -151,9 +151,9 @@ hr, .hrp {
 /* Urdu styling */
 .bilingual .translation {
   direction: rtl;
-  font-family: 'Noto Nastaliq Urdu', serif;
+  font-family: 'Gulzar', 'Noto Nastaliq Urdu', serif;
   font-size: 1.25em;
-  line-height: 2.3;
+  line-height: 2.5;
   text-align: right;
 }
 
